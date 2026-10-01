@@ -18,23 +18,36 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: game
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: game/package-lock.json
-      - run: npm ci
-      - run: npm test
-      - run: npm run build
+          cache-dependency-path: |
+            action/package-lock.json
+            game/package-lock.json
+      - name: Side-scrolling action (site root)
+        working-directory: action
+        run: |
+          npm ci
+          npm test
+          npm run build
+      - name: Card demo (/cards/)
+        working-directory: game
+        run: |
+          npm ci
+          npm test
+          npm run build
+      - name: Combine both builds into one site
+        run: |
+          mkdir -p site/cards
+          cp -r action/dist/. site/
+          cp -r game/dist/. site/cards/
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
         with:
-          path: game/dist
+          path: site
 
   deploy:
     if: github.event_name != 'pull_request'
