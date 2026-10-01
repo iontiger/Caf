@@ -2,6 +2,8 @@
 
 말싸움 덱빌딩 로그라이트의 1막 프로토타입이다. 견습 해적 아울러가 부두의 말싸움꾼들을 말발로 꺾고 깡패 선장에게 도전한다.
 
+플레이: https://iontiger.github.io/Caf/ (master에 머지되면 GitHub Actions가 자동 배포)
+
 ## 실행
 
 ```bash
