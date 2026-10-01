@@ -16,4 +16,5 @@ python3 build.py           # 그림을 넣은 단일 파일 DentPhoto-Action.htm
 
 - `src/index.html`, `src/style.css`, `src/game.js`: 화면 틀, 스타일, 게임 코드. `build.py`가 셋과 그림을 한 파일로 합친다.
 - `assets/atlas-frames.json`: 아틀라스 안 그림의 위치. `analyze_atlas.py`(Pillow 필요)로 다시 만든다.
+- `assets/title.jpg`: 시작 화면 그림. 박선규가 처음에 올린 타이틀 이미지를 JPEG로 줄였다.
 - `combat-preview.jpg`: 전투 화면 미리보기
