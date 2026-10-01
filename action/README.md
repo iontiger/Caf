@@ -2,7 +2,7 @@
 
 마을 허브 + 액션 로그라이트(Hades, Dead Cells 계열) 방향의 1지역 프로토타입이다. 견습 해적 아울러가 부두와 동굴을 지나 깡패 선장의 배에 오른다. 칼싸움이지만 핵심은 말싸움이다. 적의 도발 대사가 끝나는 순간이 공격 타이밍이고, 그때 받아치면 적이 기절하고 아울러가 맞받아치는 대사를 던진다.
 
-플레이: https://iontiger.github.io/Caf/ (master에 머지되면 GitHub Actions가 자동 배포). 예전 카드 데모는 https://iontiger.github.io/Caf/cards/
+플레이: https://iontiger.github.io/Caf/phaser/ (master에 머지되면 GitHub Actions가 자동 배포). 사이트 첫 화면은 `moonlight/`의 액션 게임, 카드 데모는 https://iontiger.github.io/Caf/cards/
 
 ## 조작
 

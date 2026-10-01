@@ -27,7 +27,12 @@ jobs:
           cache-dependency-path: |
             action/package-lock.json
             game/package-lock.json
-      - name: Side-scrolling action (site root)
+      - name: Moonlit harbor action game (site root)
+        working-directory: moonlight
+        run: |
+          node tests/game.test.cjs
+          python3 build.py
+      - name: Phaser action prototype (/phaser/)
         working-directory: action
         run: |
           npm ci
@@ -39,10 +44,11 @@ jobs:
           npm ci
           npm test
           npm run build
-      - name: Combine both builds into one site
+      - name: Combine the builds into one site
         run: |
-          mkdir -p site/cards
-          cp -r action/dist/. site/
+          mkdir -p site/phaser site/cards
+          cp moonlight/DentPhoto-Action.html site/index.html
+          cp -r action/dist/. site/phaser/
           cp -r game/dist/. site/cards/
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
