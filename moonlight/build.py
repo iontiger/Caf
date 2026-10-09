@@ -7,6 +7,7 @@ for key,filename in [('harbor','harbor.png'),('hero','hero-atlas.png'),('enemies
     mime={'jpg':'image/jpeg','webp':'image/webp'}.get(filename.rsplit('.',1)[1],'image/png')
     assets[key]=f'data:{mime};base64,'+base64.b64encode(p.read_bytes()).decode() if p.exists() else ''
 assets['frames']=json.loads((root/'assets/atlas-frames.json').read_text())
+assets['portraits']={f.stem:'data:image/webp;base64,'+base64.b64encode(f.read_bytes()).decode() for f in sorted((root/'assets/portraits').glob('*.webp'))}
 assets['frames2']=json.loads((root/'assets/act2-frames.json').read_text())
 s=(root/'src/index.html').read_text().replace('/*STYLE*/',(root/'src/style.css').read_text()).replace('/*ASSETS*/','const ASSETS='+json.dumps(assets)+';').replace('/*GAME*/',(root/'src/game.js').read_text())
 (root/'DentPhoto-Action.html').write_text(s)
