@@ -8,7 +8,7 @@
 
 ```bash
 cd moonlight
-node tests/game.test.cjs   # 규칙 테스트 19개와 모의 플레이(1막 12판, 2막 8판)
+node tests/game.test.cjs   # 규칙 테스트 20개와 모의 플레이(1막 12판, 2막 8판)
 python3 build.py           # 그림을 넣은 단일 파일 DentPhoto-Action.html 생성
 ```
 
@@ -32,4 +32,16 @@ python3 build.py           # 그림을 넣은 단일 파일 DentPhoto-Action.htm
 
 ```bash
 python3 pack_act2.py <enemy-atlases 폴더> <hero-motion24.png>
+```
+
+### 2막 주민 대화
+
+2막에서 1~6번째 방을 깨면 주민 한 명이 말을 걸어 온다. 순서는 주전자 할머니, 우편배달부, 밧줄 선원, 거울 마술사, 약병 사진사, 시계 정비사 정각이다.
+주민이 먼저 말하고, 아울러가 두 대답 중 하나를 고르면(마우스 또는 1·2 키) 주민이 답한다. 진심으로 답하면 체면 +12, 재치로 받아치면 관중 웃음 +20.
+들은 증언은 저장되어 일지에 쌓이고, 순서대로 들을수록 저택의 D.P.가 웃음을 사진 유리판에 가둔 비밀이 드러난다. 대사는 `src/game.js`의 `TALKS`에 있다.
+
+- `assets/portraits/*.webp`: 대화 장면의 초상화. 주민 여섯은 박선규가 올린 주민 그림(3열 2줄)에서, 아울러는 1막 아틀라스의 서 있는 자세에서 잘랐다
+
+```bash
+python3 pack_portraits.py <villagers-six.png>
 ```
