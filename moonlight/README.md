@@ -26,6 +26,7 @@ python3 build.py           # 그림을 넣은 단일 파일 DentPhoto-Action.htm
 - `assets/act2-enemies.webp`: 주전자 할머니, 우편배달부, 밧줄 선원, 약병 사진사, 거울 마술사, 시계 정비사의 대기·이동·공격·피격·쓰러짐 각 4장
 - `assets/hero-motion.webp`: 아울러의 달리기 6장, 점프 6장, 밧줄 오르기 12장. 칼을 쓰는 동작은 기존 아틀라스를 그대로 쓴다
 - `assets/act2-frames.json`: 두 그림 안의 위치와 발 기준점
+- `assets/cliffs.webp`: 2막 배경. 박선규가 올린 달밤의 절벽 그림을 webp로 줄였다
 
 세 파일은 박선규가 올린 원본에서 `pack_act2.py`로 만든다(Pillow, numpy, scipy 필요).
 
