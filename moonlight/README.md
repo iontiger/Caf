@@ -8,7 +8,7 @@
 
 ```bash
 cd moonlight
-node tests/game.test.cjs   # 규칙 테스트 18개와 모의 플레이(1막 12판, 2막 8판)
+node tests/game.test.cjs   # 규칙 테스트 19개와 모의 플레이(1막 12판, 2막 8판)
 python3 build.py           # 그림을 넣은 단일 파일 DentPhoto-Action.html 생성
 ```
 
